@@ -31,3 +31,8 @@
     max-width: 1320px;
   }
 }
+@media (max-width: 576px) {
+  .container {
+    max-width:90%
+  }
+}

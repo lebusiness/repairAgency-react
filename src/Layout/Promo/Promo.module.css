@@ -1,0 +1,27 @@
+.promo {
+  height: 500px;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url('../../assets/layout/promo-bg.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.title {
+  color: #333;
+  font-family: 'Comfortaa', cursive;
+  font-size: 40px;
+}
+.text {
+  font-family: 'Comfortaa', cursive;
+  font-size: 20px;
+  margin-top: 20px;
+  width: 600px;
+}
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}

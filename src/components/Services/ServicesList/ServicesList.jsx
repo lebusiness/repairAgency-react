@@ -7,21 +7,21 @@ export const ServicesList = ({}) => {
       title: "Гостиная",
       url: "gostinaya",
       text: "Ремонт гостиной в кратчайшие сроки",
-      img: "static/media/services.b4ddca44acedc36eacee.jpg",
+      img: "https://i.imgur.com/Rqca6Cm.jpg",
     },
     {
       id: "2",
       title: "Ванная",
       url: "vannaya",
       text: "Ремонт ванной в кратчайшие сроки",
-      img: "static/media/services.b4ddca44acedc36eacee.jpg",
+      img: "https://i.imgur.com/Rqca6Cm.jpg",
     },
     {
       id: "3",
       title: "Спальная",
       url: "spalnaya",
       text: "Ремонт спальной в кратчайшие сроки",
-      img: "static/media/services.b4ddca44acedc36eacee.jpg",
+      img: "https://i.imgur.com/Rqca6Cm.jpg",
     },
   ];
   return (

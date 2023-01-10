@@ -2,7 +2,7 @@ import { Services } from "../../components/Services/Services";
 import { Promo } from "../../Layout/Promo/Promo";
 import { Section } from "../../Layout/Section/Section";
 
-export const Main = () => {
+export const MainPage = () => {
   return (
     <>
       <Promo

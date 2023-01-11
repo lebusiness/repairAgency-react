@@ -1,0 +1,25 @@
+.item {
+  background: white;
+  padding: 25px 25px 30px 25px;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 4px 4px 15px 0px rgb(34 60 80 / 15%);
+}
+.item + .item{
+  margin-top: 15px;
+}
+.star {
+  color: orange;
+  margin-left: 20px;
+  margin-right: 3px;
+  font-size: 16px;
+  display: inline-block;
+  transform: translateY(-1px);
+}
+.name {
+  font-size: 20px;
+}
+.comment {
+  margin-top: 10px;
+  font-size: 17px;
+  line-height: 1.3;
+}

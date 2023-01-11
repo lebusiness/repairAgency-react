@@ -4,12 +4,11 @@
   grid-template-columns: 45fr 55fr;
   gap: 60px;
 }
-.media {
-}
 .img {
   width: 100%;
 }
 .evaluation {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
 }

@@ -1,24 +1,30 @@
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { Service } from "../../components/Service/Service";
+import { Feedbacks } from "../../components/Service/Feedbacks/Feedbacks";
+import { ServiceInfo } from "../../components/Service/ServiceInfo/ServiceInfo";
 import { Promo } from "../../Layout/Promo/Promo";
 import { Section } from "../../Layout/Section/Section";
+import { serviceSelectors } from "../../store/service/selectors";
+import { PointsLoader } from "../../UI/PointsLoader/PointsLoader";
 
-export const ServicePage = () => {
+export const ServicePage = (props) => {
+  //service - айди для переремаунта-перезапроса данных
   const { service } = useParams();
-  //selector возвращает itemData
-  const itemData = {
-    title: service,
-    description: "Лучший ремонт " + service,
-    price: 2000,
-    feedbacks: [{}],
-    img: '',
-  };
-  const { title, description, price, feedbacks, img } = itemData;
+
+  //заголовок из запроса
+  const fetchTitle = useSelector(serviceSelectors.selectServiceTitle);
+
   return (
     <>
-      <Promo title={title} text={"Лучшие " + title} />
-      <Section title={"Ремонт " + title}>
-        <Service />
+      <Promo
+        title={fetchTitle ??  <PointsLoader />}
+        text={"Предоставляем качественный ремонт вашей квартиры"}
+      />
+      <Section title={fetchTitle ?? <PointsLoader />}>
+        <ServiceInfo key={service}/>
+      </Section>
+      <Section title={'Отзывы'}>
+        <Feedbacks />
       </Section>
     </>
   );

@@ -9,7 +9,7 @@ function App() {
       <Layout>
         <Routes>
           <Route index element={<MainPage />} />
-          <Route path="/:service" element={<ServicePage />} />
+          <Route path="/:service" element={<ServicePage/>} />
         </Routes>
       </Layout>
     </BrowserRouter>

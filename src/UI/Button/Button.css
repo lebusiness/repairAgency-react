@@ -1,10 +1,10 @@
 .button {
   background: #ef4a24;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 16px;
   border: 1px solid rgb(233, 158, 114);
-  padding: 8px 15px;
+  padding: 8px 20px;
   display: inline-block;
   transition: 0.2s background;
   cursor: pointer;

@@ -27,7 +27,9 @@ const initialState = {
 export const servicesSlice = createSlice({
   name: "services",
   initialState,
-  reducers: {},
+  reducers: {
+    
+  },
   extraReducers: {
     [getServices.pending]: (state) => {
       state.loading = true;

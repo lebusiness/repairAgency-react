@@ -28,9 +28,13 @@
   display: flex;
   align-items: center;
 }
+.account {
+  margin-right: 10px;
+  cursor: pointer;
+}
 .number {
   font-size: 18px;
-  transform: translateY(2px);
+  /* transform: translateY(2px); */
   color: #000;
   font-weight: 400;
   margin-right: 20px;

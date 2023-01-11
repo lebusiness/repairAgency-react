@@ -7,6 +7,7 @@ import { ReactComponent as Cart } from "./../../assets/layout/cart.svg";
 import styles from "./Header.module.css";
 export const Header = () => {
   const cartItemsLength = useSelector(cartSelectors.selectCartItems).length;
+  const accountName = 'Леонид';
   return (
     <header className={styles.header}>
       <Container>
@@ -15,6 +16,7 @@ export const Header = () => {
             <span>Repair</span>Agency
           </NavLink>
           <div className={styles.logic}>
+          <span className={styles.account}>Профиль: {accountName}</span>
             <a href="tel:+79991335212" className={styles.number}>
               +7 (999) 133-52-12
             </a>

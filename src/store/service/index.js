@@ -32,6 +32,15 @@ export const serviceSlice = createSlice({
       state.loading = true;
       state.error = null;
     },
+    addFeedback: (state, action) => {
+      const {name, comment, evaluation} = action.payload;
+      state.entitie.feedbacks.push({
+        name,
+        comment,
+        evaluation,
+        id: Math.random(),
+      })
+    }
   },
   extraReducers: {
     [getService.pending]: (state) => {

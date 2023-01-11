@@ -5,7 +5,8 @@ import styles from "./Cart.module.css";
 import { CartList } from "./CartList/CartList";
 
 export const Cart = () => {
-  const totalPrice = useSelector(cartSelectors.selectCartItems).reduce(
+  const cartItems = useSelector(cartSelectors.selectCartItems)
+  const totalPrice = cartItems.reduce(
     (prev, cur) => (prev += cur.price),
     0
   );
@@ -16,7 +17,7 @@ export const Cart = () => {
         <span className={styles.total}>
           <b>Общая стоимость</b>: {totalPrice}₽/час
         </span>
-        <Button className={styles.button} disabled={!totalPrice} >Подтвердить заказ</Button>
+        <Button className={styles.button} disabled={!totalPrice} onClick={() => {alert(JSON.stringify(cartItems))}}>Подтвердить заказ</Button>
       </div>
     </>
   );

@@ -14,29 +14,50 @@ export const ServicesList = ({}) => {
   }, [dispatch]);
 
   const [filterValue, setFilterValue] = useState("");
+  const [sortValue, setSortValue] = useState(false);
+
   const inputHandler = (e) => {
     setFilterValue(e.target.value);
   };
-  let ServicesData = useSelector(servicesSelectors.selectServices);
+  const checkBoxHandler = (e) => {
+    setSortValue((p) => !p);
+  };
+  let ServicesData = [...useSelector(servicesSelectors.selectServices)];
   const isLoading = useSelector(servicesSelectors.selectLoading);
 
-  if (filterValue !== "") {
+  if (!isLoading && filterValue !== "") {
     ServicesData = ServicesData.filter((service) =>
       service.title.toLowerCase().includes(filterValue.toLowerCase())
     );
   }
 
+  if (!isLoading && sortValue) {
+    ServicesData = ServicesData.sort((a, b) => {
+      return a.price - b.price
+    });
+  }
   return (
     <>
-      <Input
-        value={filterValue}
-        onInput={inputHandler}
-        label="Поиск"
-        className={styles.input}
-        id="search"
-        type="name"
-        placeholder='название услуги'
-      />
+      <form action="" onSubmit={(e) => e.preventDefault()}>
+        <Input
+          value={filterValue}
+          onInput={inputHandler}
+          label="Поиск"
+          className={styles.input}
+          id="search"
+          type="name"
+          placeholder="Название услуги"
+        />
+        <Input
+          checked={sortValue}
+          onChange={checkBoxHandler}
+          label="Сортировка по цене"
+          className={styles.input}
+          style={{cursor: 'pointer'}}
+          id="sort"
+          type="checkBox"
+        />
+      </form>
       {isLoading ? (
         <ul className={styles.list}>
           {[{}, {}, {}, {}].map((_, index) => (
@@ -47,9 +68,13 @@ export const ServicesList = ({}) => {
         </ul>
       ) : (
         <ul className={styles.list}>
-          {ServicesData.length !== 0 ? ServicesData.map((service) => (
-            <ServicesItem {...service} key={service.id} />
-          )): <li>Не найдено.</li>}
+          {ServicesData.length !== 0 ? (
+            ServicesData.map((service) => (
+              <ServicesItem {...service} key={service.id} />
+            ))
+          ) : (
+            <li>Не найдено.</li>
+          )}
         </ul>
       )}
     </>

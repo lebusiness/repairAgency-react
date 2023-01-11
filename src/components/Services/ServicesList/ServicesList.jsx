@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getServices } from "../../../store/services";
 import { servicesSelectors } from "../../../store/services/selectors";
-import { SkeletonBlock } from "../../../UI/SkeletonBlock/SkeletonBlock";
+import { SkeletonBlock } from "../../../UI";
+
 export const ServicesList = ({}) => {
   //dispatch на получение массива услуг
   const dispatch = useDispatch();

@@ -5,7 +5,8 @@ import { ServiceInfo } from "../../components/Service/ServiceInfo/ServiceInfo";
 import { Promo } from "../../Layout/Promo/Promo";
 import { Section } from "../../Layout/Section/Section";
 import { serviceSelectors } from "../../store/service/selectors";
-import { PointsLoader } from "../../UI/PointsLoader/PointsLoader";
+import { PointsLoader } from "../../UI";
+
 
 export const ServicePage = (props) => {
   //service - айди для переремаунта-перезапроса данных

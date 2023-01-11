@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getService, serviceActions } from "../../../store/service";
 import { serviceSelectors } from "../../../store/service/selectors";
-import { Button } from "../../../UI";
-import { SkeletonBlock } from "../../../UI/SkeletonBlock/SkeletonBlock";
+import { Button, SkeletonBlock } from "../../../UI";
+
 import styles from "./ServiceInfo.module.css";
 export const ServiceInfo = () => {
   const { service } = useParams();

@@ -1,8 +1,8 @@
 import styles from './Feedbacks.module.css'
 import { useSelector } from "react-redux";
 import { serviceSelectors } from "../../../store/service/selectors";
-import { SkeletonBlock } from "../../../UI/SkeletonBlock/SkeletonBlock";
 import { FeedbacksItem } from "./FeedbacksItem/FeedbacksItem";
+import { SkeletonBlock } from '../../../UI';
 
 export const Feedbacks = () => {
   const feedbacksData = useSelector(serviceSelectors.selectServiceFeedbacks);

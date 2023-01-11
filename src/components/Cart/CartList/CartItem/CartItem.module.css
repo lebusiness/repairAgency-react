@@ -24,3 +24,12 @@
 .photo {
   justify-self: start;
 }
+
+@media (max-width: 992px) {
+  .item {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .top {
+    display: none;
+  }
+}

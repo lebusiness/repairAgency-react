@@ -11,6 +11,11 @@
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+  }
+}
 .logo {
   font-size: 28px;
   font-weight: 700;

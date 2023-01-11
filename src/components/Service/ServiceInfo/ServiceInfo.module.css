@@ -4,6 +4,12 @@
   grid-template-columns: 45fr 55fr;
   gap: 60px;
 }
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
 .img {
   width: 100%;
 }

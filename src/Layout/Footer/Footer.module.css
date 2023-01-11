@@ -2,4 +2,7 @@
   padding: 30px 0;
   background: #333;
   color: white;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { cartActions } from "../../../store/cart";
 import { getService, serviceActions } from "../../../store/service";
 import { serviceSelectors } from "../../../store/service/selectors";
 import { Button, SkeletonBlock } from "../../../UI";
@@ -20,13 +21,21 @@ export const ServiceInfo = () => {
   }, [service, dispatch]);
   const feedbacksData = useSelector(serviceSelectors.selectServiceFeedbacks);
 
-  const averageEvaluation =
+  const averageEvaluation = (
     feedbacksData?.reduce((sum, cur) => sum + cur.evaluation, 0) /
-    feedbacksData?.length;
-  const { description, price, img } = useSelector(
+    feedbacksData?.length
+  ).toFixed(1);
+
+  //получание объета услуги
+  const { description, price, img, title } = useSelector(
     serviceSelectors.selectService
   );
   const isLoading = useSelector(serviceSelectors.selectLoading);
+
+  const addToCartHandler = () => {
+    dispatch(cartActions.addToCart({ img, title, price, service }));
+  };
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.media}>
@@ -38,7 +47,7 @@ export const ServiceInfo = () => {
         <div className={styles.evaluation}>
           <span>Оценка клиентов</span>
           <div>
-            {!isLoading && feedbacksData.length ? (
+            {!isLoading && feedbacksData?.length ? (
               <span>{averageEvaluation} / 5.0</span>
             ) : (
               "... / 5.0"
@@ -68,7 +77,9 @@ export const ServiceInfo = () => {
             }}
           />
         )}
-        <Button className={styles.button}>Добавить услугу в корзину</Button>
+        <Button className={styles.button} onClick={addToCartHandler}>
+          Добавить услугу в корзину
+        </Button>
       </div>
     </div>
   );

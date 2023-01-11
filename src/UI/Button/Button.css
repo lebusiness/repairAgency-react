@@ -12,3 +12,10 @@
 .button:hover {
   background: #ef6e24;
 }
+.button:disabled,
+.button[disabled] {
+  background-color: #cccccc;
+  color: #666666;
+  border: none;
+  cursor: no-drop;
+}

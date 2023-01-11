@@ -7,7 +7,7 @@ import { SkeletonBlock } from '../../../UI';
 export const Feedbacks = () => {
   const feedbacksData = useSelector(serviceSelectors.selectServiceFeedbacks);
   const isLoading = useSelector(serviceSelectors.selectLoading);
-
+  
   if (isLoading)
     return <SkeletonBlock style={{ height: "100px", marginTop: "30px" }} />;
 

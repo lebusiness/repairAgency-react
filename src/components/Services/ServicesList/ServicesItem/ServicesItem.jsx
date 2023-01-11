@@ -11,7 +11,7 @@ export const ServicesItem = ({ title, text, img, url, price }) => {
         <p className={styles.text}>{text}</p>
         <div className={styles.targetWrapper}>
           <span className={styles.price}>{price}₽/час</span>
-          <NavLink to={url} state={title}>
+          <NavLink to={'./'+url} state={title}>
             <Button className={styles.button}>Перейти</Button>
           </NavLink>
         </div>

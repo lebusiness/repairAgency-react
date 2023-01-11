@@ -12,7 +12,7 @@ export const Header = () => {
     <header className={styles.header}>
       <Container>
         <div className={styles.top}>
-          <NavLink to="/" className={styles.logo}>
+          <NavLink to="./" className={styles.logo}>
             <span>Repair</span>Agency
           </NavLink>
           <div className={styles.logic}>
@@ -20,7 +20,7 @@ export const Header = () => {
             <a href="tel:+79991335212" className={styles.number}>
               +7 (999) 133-52-12
             </a>
-            <NavLink to="/cart" className={styles.cartWrap}>
+            <NavLink to="./cart" className={styles.cartWrap}>
               <Cart height={"40px"} width={"40px"} className={styles.cart} />
               {cartItemsLength}
             </NavLink>
@@ -35,7 +35,7 @@ export const Header = () => {
                     ? styles["list-item--active"]
                     : styles["list-item"];
                 }}
-                to="/gostinaya"
+                to="./gostinaya"
               >
                 Гостиная
               </NavLink>
@@ -47,7 +47,7 @@ export const Header = () => {
                     ? styles["list-item--active"]
                     : styles["list-item"];
                 }}
-                to="/vannaya"
+                to="./vannaya"
               >
                 Ванная
               </NavLink>
@@ -59,7 +59,7 @@ export const Header = () => {
                     ? styles["list-item--active"]
                     : styles["list-item"];
                 }}
-                to="/spalnaya"
+                to="./spalnaya"
               >
                 Спальная
               </NavLink>

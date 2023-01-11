@@ -3,7 +3,7 @@ import { Promo } from "../../Layout/Promo/Promo";
 import { Section } from "../../Layout/Section/Section";
 
 export const MainPage = () => {
-  console.log("mainPage");
+
   return (
     <>
       <Promo
